@@ -1,0 +1,257 @@
+/* start GENERAL */
+* {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+.font-size-big {
+  font-size: 4.2rem;
+  margin: 4rem;
+}
+p {
+  margin: 0;
+}
+.margin-2 {
+  margin: 0;
+}
+.pl-reset {
+  padding-left: 0 !important;
+}
+/* end GENERAL */
+
+/* start NAVBAR */
+
+.menu > li {
+  overflow: hidden;
+}
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+}
+.button-red {
+  background-color: red;
+}
+.button-red:hover {
+  background-color: transparent !important;
+  color: black !important;
+  border: 1px solid black;
+}
+.margin-right {
+  margin-right: 100px;
+}
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#menu-toggle {
+  display: none;
+}
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  height: 5px;
+  width: 20px;
+  transform: rotate(405deg);
+  background-color: white;
+  position: fixed;
+}
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+  background-color: white;
+  z-index: 1;
+  position: fixed;
+}
+/* ---middle line--- */
+.menu-button {
+  display: block;
+  background-color: rgb(78, 76, 76);
+  position: absolute;
+  height: 5px;
+  width: 25px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+  z-index: 1;
+}
+/* ---first line--- */
+.menu-button::before {
+  display: block;
+  background-color: rgb(78, 76, 76);
+  position: absolute;
+  height: 5px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+  z-index: 1;
+}
+/* ---last line--- */
+.menu-button::after {
+  display: block;
+  background-color: rgb(78, 76, 76);
+  position: absolute;
+  height: 5px;
+  width: 20px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+  z-index: 1;
+}
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+/* end NAVBAR */
+
+/* start HERO */
+.height-70 {
+  height: 70vh;
+}
+.bg-image {
+  background-image: url("img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.text-dark h2 {
+  font-size: 7rem;
+}
+/* end HERO */
+
+/* start CARDS */
+.rounded-custom {
+  border-radius: 10px !important;
+}
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+/* end CARDS */
+
+/* start FORM */
+.py-custom {
+  padding: 7.5rem 0;
+}
+.mt-btn {
+  margin-top: 3.1rem !important;
+}
+/* end FORM */
+
+/* start CLIENTS TABLE */
+.data-custom {
+  padding: 15px;
+}
+.row-custom {
+  background-color: rgb(244, 230, 187);
+}
+/* end CLIENTS TABLE */
+
+/* start MEDIA-TABLET */
+@media (max-width: 768px) {
+  /* GENERAL */
+  .w-50 {
+    width: 25% !important;
+  }
+  .font-size-big {
+    font-size: 2.5rem;
+    margin: 2rem;
+  }
+  /* start NAVBAR */
+  ul li a.text-dark {
+    color: white !important;
+  }
+  .menu-button-container {
+    display: flex;
+  }
+  .menu-button {
+    z-index: 2;
+  }
+  .menu {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    background-color: #302f38;
+  }
+  #menu-toggle ~ .menu {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu {
+    height: 100vh;
+    padding: 4rem 1.5rem;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1;
+  }
+  #menu-toggle:checked ~ .menu li {
+    padding-bottom: 2rem;
+    padding-left: 1.5rem;
+  }
+  #menu-toggle:checked ~ .menu li:last-of-type {
+    margin-bottom: auto;
+  }
+  .menu li {
+    margin: 0;
+    padding: 0 0;
+    width: 100%;
+  }
+  /* end NAVBAR */
+
+  /* hero section */
+  .text-dark h2 {
+    font-size: 6rem;
+  }
+  /* hero section */
+
+  /* footer */
+  .py-4 {
+    padding-bottom: 0.1rem !important;
+    padding-top: 0.1rem !important;
+  }
+  footer .py-5 {
+    padding-bottom: 2rem !important;
+    padding-top: 2rem !important;
+  }
+  /* footer */
+}
+/* end MEDIA-TABLET */
+
+/*  start MEDIA-MOBILE */
+@media screen and (max-width: 486px) {
+  /* hero */
+  .text-dark h2 {
+    font-size: 4rem;
+  }
+  /* hero */
+
+  /* cards */
+  .img-mobile {
+    width: 100%;
+  }
+  /* cards */
+
+  /* footer */
+  footer .py-5 {
+    padding-bottom: 1.5rem !important;
+    padding-top: 1.5rem !important;
+  }
+  .mobile-margin {
+    margin-bottom: 15rem;
+  }
+  /* footer */
+}
+/* end MEDIA-MOBILE */
